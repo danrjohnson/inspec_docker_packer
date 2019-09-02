@@ -1,0 +1,24 @@
+{
+    "variables": {
+        "echo_text": ""
+    },
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "apt-get update",
+                "apt-get install nginx"
+            ]
+        },
+    ],
+    "builders": [
+        {
+            "communicator": "ssh",
+            "box_name": "bento/ubuntu-18.04",
+            "source_path": "bento/ubuntu-18.04",
+            "provider": "virtualbox",
+            "skip_add": true,
+            "type": "vagrant"
+        }
+    ]
+}
